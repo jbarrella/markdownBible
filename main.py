@@ -7,6 +7,7 @@ import json
 
 
 def main(book):
+	print(book)
 	with open('bookInfo.json') as jsonFile:
 		bookInfo = json.load(jsonFile)
 
