@@ -30,9 +30,13 @@ def main(book):
 		for i, verse in enumerate(verses):
 			verseText = verse.text.strip()
 			if i == 0:
-				f.write('{} {} ^{}-{}\n\n'.format(code, verseText, ch+1, i+1))
+				verseText = ' - '.join(verseText.split(' ', 1))
+				writeText = '{} {} ^{}-{}\n\n'.format(code, verseText, ch+1, i+1)
+				f.write(writeText)
 			else:
-				f.write('{} {}:{} ^{}-{}\n\n'.format(code, ch+1, verseText, ch+1, i+1))
+				verseText = ' - '.join(verseText.split(' ', 1))
+				writeText = '{} {}:{} ^{}-{}\n\n'.format(code, ch+1, verseText, ch+1, i+1)
+				f.write(writeText)
 
 		f.write('\n')
 
